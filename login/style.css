@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #95a5a6;
+  background-image: url(http://www.britishbeer.com/images/location_pictures/franklin.jpg);
+  font-family: 'Helvetica Neue', Arial, Sans-Serif;
+}
+
+
+.hej{
+position: center;
+  margin-top: 0;
+  margin-left: 340px;
+  background: -webkit-linear-gradient(left, #D20934 0%, #132344 100%);
+  width: 700px;
+  height: 100px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #333;
+  padding: 15px;
+
+}
+
+
+.hej h1{
+
+ text-align: center;
+  font-weight: 200;
+  font-size: 5em;
+  margin-top: -20px;
+  color:white;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+    
+
+}
+
+
+.login-wrap {
+  position: center;
+  margin-top: 80px;
+  margin-left: 500px;
+  background: #ecf0f1;
+  width: 350px;
+  border-radius: 5px;
+  border-top: 10px;
+  box-shadow: 3px 3px 10px #333;
+  padding: 15px;
+}
+.login-wrap h2 {
+  text-align: center;
+  font-weight: 200;
+  font-size: 2em;
+  margin-top: 10px;
+  color: #34495e;
+}
+.login-wrap .form {
+  padding-top: 20px;
+}
+.login-wrap .form input[type="text"],
+.login-wrap .form input[type="password"],
+.login-wrap .form button {
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 25px;
+  height: 40px;
+  border-radius: 5px;
+  outline: 0;
+  -moz-outline-style: none;
+}
+.login-wrap .form input[type="text"],
+.login-wrap .form input[type="password"] {
+  border: 1px solid #bbb;
+  padding: 0 0 0 10px;
+  font-size: 14px;
+}
+.login-wrap .form input[type="text"]:focus,
+.login-wrap .form input[type="password"]:focus {
+  border: 1px solid #3498db;
+}
+
+.login-wrap .form button {
+  background: -webkit-linear-gradient(left, #D20934 0%, #132344 100%);
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
+  
+}
+.login-wrap .form button:hover {
+  box-shadow: 1px 1px 5px #555;
+}
+.login-wrap .form button:active {
+  box-shadow: 1px 1px 7px #222;
+}
+

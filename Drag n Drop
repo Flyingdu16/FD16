@@ -2,8 +2,6 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="keywords" content="jquery,ui,easy,easyui,web">
-	<meta name="description" content="easyui help you build your web page easily!">
 	<title>Flying Dutchman 16</title>
 	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
@@ -63,6 +61,19 @@
 			margin-top:20px;
 			padding-right:20px;
 		}
+			
+		.btn{
+			margin: 0 10px 10px 0;
+			float:right;
+		}
+		
+		.btndiv{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin: 0 10px 10px 0;
+		}
+		
 	</style>
 	
 	
@@ -180,16 +191,63 @@
 				</div>
 			</a>
 		</li>
-		<li>
-			<a href="#" class="item">
-				<img src="images/16.jpg"/>
-				<div>
-					<p>Beer 6</p>
-					<p>Price: SEK45</p>
-				</div>
-			</a>
-		</li>
+		
+		
+		<?php
+		$servername = "localhost";
+		$username 	= "root";
+		$password 	= "root";
+		$dbname 	= "flyingdutchman16";
+		
+		
+		// Create connection
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		
+		// Check connection
+		if (!$conn) {
+		    die("Connection failed: " . mysqli_connect_error());
+		}
+		
+		
+		$sql = "SELECT namn, prisinklmoms FROM sbl_beer WHERE varugrupp='Cognac' ";
+		$result = $conn->query($sql);
+		
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc()) {
+		?>
+		    <li>
+					<a href="#" class="item">
+						<img src="images/15.jpg"/>
+						<div>
+							<p><?php echo $row["namn"]?></p>
+							<p>Price: SEK<?php echo $row["prisinklmoms"]?></p>
+						</div>
+					</a>
+				</li>
+
+		<?php
+		   }
+		} else {
+		    echo "0 results";
+		}
+		
+		echo "Connected successfully";
+	
+			?>
+			
+			
+			
+			
+			
+			
+			
 	</ul>
+	
+	
+	
+	
+	
 	<div class="cart">
 		<h1>Shopping Cart</h1>
 		<div style="background:#fff">
@@ -206,6 +264,12 @@
 		<p class="total">Total: SEK0</p>
 		
 		<h2>Drop here to add to cart</h2>
+		
+		<div class="btndiv">
+        	<button class="btn">Pay</button>
+        	<button class="btn">Cancel</button>
+		</div>
+		
 	</div>
 </body>
 </html>
